@@ -1,0 +1,40 @@
+flowchart TD
+  A["A working session starts in the repository"] --> B["A status line is appended to the project log"]
+  B --> C["The agent reads the goal register"]
+  C --> D{"Does the register hold the goal and the part goals?"}
+  D -->|"no"| E["Draft the register from the stated goal"]
+  E --> H0["HUMAN DECISION 1: approve goal, part goals, acceptance criteria, non-goals"]
+  H0 --> F
+  D -->|"yes"| F["The agent restates goal, part goals and non-goals"]
+  F --> G{"Is every element UNDERSTOOD?"}
+  G -->|"no, blocking"| M1["Alignment meeting: one independent reviewer returning four fixed fields"]
+  M1 --> CD1["Each coder states its own goal id and acceptance command"]
+  CD1 --> H1["HUMAN DECISION 2: one numbered decision list"]
+  H1 --> MP["The agent writes the alignment record"]
+  MP --> I
+  G -->|"no, not blocking"| N1["Record it and batch it to unit close"]
+  N1 --> I
+  G -->|"yes"| I["Pick the active unit from the register"]
+  I --> J["Write the unit contract, branch from the main line, freeze the baseline"]
+  J --> K["Work the unit"]
+  K --> L{"Anything outside the frozen baseline?"}
+  L -->|"yes"| L2["Register the change request and keep working"]
+  L2 --> L3{"Disposition"}
+  L3 -->|"AMEND"| H2["HUMAN DECISION 3: approve a wider baseline"]
+  H2 --> J2["New frozen hash, continue with the wider contract"]
+  J2 --> K
+  L3 -->|"NEXT-UNIT"| NU["Its own unit and its own branch, after this unit merges"]
+  L3 -->|"DEFER or REJECT"| REG["Recorded, no human involved"]
+  NU --> K
+  REG --> K
+  L -->|"no"| O["Unit done: tests, build, verification record"]
+  O --> P["Run the gate"]
+  P -->|"red"| R1["Fix the cause, record the nonconformity, run the gate again"]
+  R1 --> P
+  P -->|"green"| Q["Commit with the unit trailer, review, merge"]
+  Q --> H3["HUMAN DECISION 4: one batched list, only if items exist"]
+  H3 --> S["Update the register and rotate the project log"]
+  S --> T{"Context usage past the rotation threshold?"}
+  T -->|"yes"| U["Rotate: a fresh session continues from the log"]
+  T -->|"no"| I
+  U --> I

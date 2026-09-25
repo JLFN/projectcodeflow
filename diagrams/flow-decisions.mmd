@@ -1,0 +1,12 @@
+flowchart TD
+  A1["A new goal is introduced"] --> H1["HUMAN DECISION: approve the goal and the acceptance criteria"]
+  A2["A blocking ambiguity in a unit"] --> H2["HUMAN DECISION: one numbered list of the alternative readings"]
+  A3["A change request argues for widening the baseline"] --> H3["HUMAN DECISION: approve or refuse the amendment"]
+  A4["Unit close with parked items"] --> H4["HUMAN DECISION: one batched list"]
+  A5["First time in a repository"] --> H5["HUMAN DECISION: enable the automatic checks and choose the verification profile"]
+  H1 --> AUTO["Everything else runs without a human"]
+  H2 --> AUTO
+  H3 --> AUTO
+  H4 --> AUTO
+  H5 --> AUTO
+  AUTO --> AUTOIN["No human involved: project-log rotation, DEFER, REJECT, NEXT-UNIT, the independent reviewer, the gate, the verification run"]

@@ -1,0 +1,17 @@
+flowchart LR
+  X["A discovery during a unit"] --> Y{"Inside the unit's declared scope?"}
+  Y -->|"same files, no new public surface"| Z["Implementation detail: do it, no change request"]
+  Y -->|"no"| C1["Write the change request and keep working"]
+  C1 --> C2{"Adds a public symbol, endpoint, migration, config key or CLI flag, or touches an undeclared file?"}
+  C2 -->|"yes"| C3["Class it: feature, defect, performance, refactor or risk"]
+  C2 -->|"no"| C4["Reclassify as an implementation detail and close it"]
+  C3 --> C5{"Disposition"}
+  C5 -->|"AMEND"| C6["HUMAN DECISION: approve a wider baseline"]
+  C6 --> C7["New frozen hash, continue with the wider contract"]
+  C5 -->|"NEXT-UNIT"| C8["Its own unit and branch, after this unit merges"]
+  C5 -->|"DEFER"| C9["Registered, not scheduled"]
+  C5 -->|"REJECT"| C10["Registered with the reason"]
+  C7 --> C11["Closing unit, branch and commit recorded"]
+  C8 --> C11
+  C9 --> C11
+  C10 --> C11
