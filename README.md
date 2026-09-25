@@ -38,6 +38,8 @@ The skill is invoked as `/projectcodeflow`, with the sub-commands
 | `references/flow-en.md` | The flow in detail, step by step, with the cost model |
 | `references/flow-sv.md` | The same in Swedish, with the diagrams embedded |
 | `references/sources.md` | Every external source behind the method, with the clause-level mapping to ISO 21502, ISO 10007 and ISO 9001:2026 |
+| `references/roles-en.md` | How many agents the method needs, which role is new, the per-unit counts and the concurrency rules |
+| `references/roles-sv.md` | The same in Swedish |
 | `diagrams/` | Three diagrams as Mermaid source and rendered PNG |
 | `presentation/board-sv.html` | A one-page board visual in Swedish, self-contained and offline-safe |
 | `presentation/board-sv.png` | The same board visual rendered to an image for slides or print |

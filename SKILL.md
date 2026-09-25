@@ -171,6 +171,7 @@ unmounted, and the whole method can be withdrawn without touching product code.
 | `references/flow-en.md` | The flow in detail, with the step table and cost model |
 | `references/flow-sv.md` | The same in Swedish, with the charts embedded |
 | `references/sources.md` | Every external source behind the method: the ISO catalogue pages and official previews it was written against, and the clause-level mapping. Read this before repeating any standards claim |
+| `references/roles-en.md`, `references/roles-sv.md` | How many agents the method needs (one is enough; three is the recommended shape), which role is new, the per-unit invocation counts, concurrency and nesting rules, and how to choose models |
 | `diagrams/*.mmd`, `diagrams/*.png` | The three flow diagrams, source and render |
 | `presentation/board-sv.html`, `presentation/board-sv.png` | A one-page board visual in Swedish, self-contained and offline-safe, plus its rendered image |
 | `scripts/pm-gate.sh`, `scripts/scaffold-unit.sh` | The gate and the scaffolding helper |
