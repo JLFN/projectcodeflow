@@ -22,7 +22,7 @@ Source for each diagram is the `.mmd` file next to it.
 | 4 | The goal and part goals are written and approved | agent + human | register file plus one question with numbered options | yes, once per new goal | nothing starts without approval |
 | 5 | The goal, part goals and non-goals are restated | agent | every element tagged UNDERSTOOD, UNCLEAR or CONFLICT | no | an untagged element may not pass |
 | 6 | A blocking ambiguity is settled | agent, reviewer, coders, human | one independent reviewer returning four fixed fields; each coder states its own goal id and acceptance command; one numbered question | yes, when blocking | non-blocking ambiguity is recorded and batched to unit close |
-| 7 | Unit contract, branch and frozen baseline | agent | branch from the main line; hash of the acceptance criteria recorded in the first commit trailer | no | a hash stored only next to the text it protects is self-attested |
+| 7 | Unit contract, branch and frozen baseline | agent | branch from the main line; hash of the acceptance criteria recorded in the unit file **and** in the first commit trailer, which is the anchor the gate checks | no | a hash stored only next to the text it protects is self-attested |
 | 8 | The unit is worked | coders | ordinary rules for build, tests and verification | no | each coder records its own confirmation; the gate checks the text |
 | 9 | Something outside the baseline is found | anyone | change request registered, work continues | only for AMEND | laundering the change into the acceptance criteria is the main risk |
 | 10 | Unit verification | agent + verifier | tests, build, independent verification record | no | the verification must be fresh against the pushed state |

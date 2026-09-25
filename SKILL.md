@@ -105,13 +105,24 @@ active branch, it becomes its own planned unit, and the current goal continues.
 
 ## 5. The gate
 
-`scripts/pm-gate.sh` is the enforcement. It fails red unless:
+`scripts/pm-gate.sh` is the enforcement, and it is the authority — run it directly
+at commit time and in CI, because a commit fence built on harness hooks fails open.
+It fails red unless:
 
-- the active unit has a contract with acceptance criteria and a frozen hash;
-- the working branch matches the unit's recorded branch;
-- the recorded hash still matches the acceptance-criteria block;
+- the goal register exists;
+- exactly one unit is marked active (never two units in flight);
+- the active unit declares acceptance criteria;
+- the working branch matches the unit's recorded branch, and is not a protected
+  integration line;
+- the frozen baseline hash still matches the acceptance-criteria block;
+- that same hash is anchored in a commit trailer (`Baseline: <hash>`), so a writer
+  cannot pass by rewriting the record alone;
 - an alignment record exists for the unit;
 - no change request is left undispositioned.
+
+Pass `--trust-file <path>` when your harness gates folder-local automation behind
+a trust store, so the script can say out loud that the gates may never run;
+`--strict-trust` turns that warning into a failure.
 
 Wire it where your project already runs checks (`tests/run.sh`, a pre-push hook, a
 CI step that skips when the checker is absent). Treat a red gate as a recorded
@@ -139,6 +150,12 @@ unmounted, and the whole method can be withdrawn without touching product code.
 - A commit gate built on agent-harness hooks is a drift fence, not a security
   boundary: it can be bypassed by indirection, and hook failures generally fail
   open. Keep the script authoritative and run it directly too.
+- A gate that never runs looks exactly like a gate that passed. Repository-local
+  automation can be silently skipped when a folder is untrusted, so the absence
+  must be detectable: mount what you can where it is always active, and make the
+  script report the trust state rather than assume it.
+- The frozen value must live outside the record its writer can edit. That is why
+  the hash is anchored in a commit trailer as well as in the unit file.
 - Never pin a model in the rules or in a role definition. Providers fail, quotas
   run out, and a pinned slug takes the whole method down with it. Resolve models
   per project at runtime.

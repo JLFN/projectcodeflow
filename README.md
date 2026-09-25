@@ -53,18 +53,35 @@ agree with the repository; the unit-close diff review is what catches the rest.
 ## Verification
 
 The gate and the scaffolding helper were exercised before this repository was
-published, in a scratch repository, and the two outcomes that matter were
-observed:
+published, in a scratch repository, and every outcome that matters was observed:
 
-- With the register, a unit contract, a matching branch, an alignment record and
-  a dispositioned change request in place, the gate prints `overall PASS` and
-  exits 0.
-- With one word silently added to the acceptance-criteria block, the gate fails
-  the baseline check and exits 1. That is the scope-growth detector working: the
-  frozen hash is taken over exactly that block.
+| Situation | Observed |
+| --- | --- |
+| Register, unit contract, matching branch, alignment record and a dispositioned change request, with the frozen hash also in a commit trailer | `overall PASS`, exit 0 |
+| The frozen hash is not anchored in any commit trailer | fails the anchor check, exit 1 |
+| A word is silently added to the acceptance-criteria block | fails the baseline check, exit 1 (the scope-growth detector) |
+| Two unit files are marked active at once | fails the single-unit check, exit 1 |
+| The folder is not in the trust store passed with `--trust-file` | warns, or fails with `--strict-trust` |
 
-`scripts/scaffold-unit.sh` is what creates those records and computes the hash, so
-the schema cannot drift by hand.
+## Adjustments after review
+
+These were added because each one removes a way the method could quietly stop
+working. Every one of them is in the scripts, not only in the prose.
+
+1. **The frozen hash is anchored outside the record.** The gate now requires the
+   same hash inside a commit trailer (`Baseline: <hash>`). A record that its own
+   writer can rewrite cannot be the only place the frozen value lives.
+2. **One unit in flight is enforced, not just recommended.** Two active unit files
+   fail the gate. Parallel units make a baseline meaningless.
+3. **The absence of the gate must be loud.** Repository-local automation can be
+   skipped without a word when a folder is untrusted, which looks identical to a
+   gate that passed. `--trust-file` makes the script say so, and `--strict-trust`
+   turns it into a failure.
+4. **The script is the authority.** Hook-based commit fences fail open, so the
+   gate is written to run on its own at commit time and in CI; the fence is a
+   convenience on top, never the guarantee.
+5. **Records cannot be split across writers.** One file per unit and per change
+   request, so two branches never append to the same document.
 
 ## Sammanfattning på svenska
 

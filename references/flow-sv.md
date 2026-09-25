@@ -22,7 +22,7 @@ Källkoden till varje bild ligger i `.mmd`-filen bredvid bilden.
 | 4 | Målet och delmålen skrivs ned och godkänns | agent och människa | registerfil plus en fråga med numrerade alternativ | ja, en gång per nytt mål | inget startar utan godkännande |
 | 5 | Mål, delmål och icke-mål återges | agent | varje del märks UNDERSTOOD, UNCLEAR eller CONFLICT | nej | en omärkt del får inte passera |
 | 6 | En blockerande oklarhet avgörs | agent, granskare, utvecklare, människa | en oberoende granskare som svarar i fyra fasta fält, varje utvecklare anger sitt mål-id och sitt acceptanskommando, en numrerad fråga | ja, när den blockerar | icke-blockerande oklarhet antecknas och samlas till enhetens avslut |
-| 7 | Enhetskontrakt, gren och fryst baslinje | agent | egen gren från huvudlinjen, hash av acceptanskriterierna i första incheckningens trailer | nej | en hash som bara ligger bredvid texten den skyddar är självintygad |
+| 7 | Enhetskontrakt, gren och fryst baslinje | agent | egen gren från huvudlinjen, hash av acceptanskriterierna i både enhetsfilen och första incheckningens trailer, som är ankaret grinden kontrollerar | nej | en hash som bara ligger bredvid texten den skyddar är självintygad |
 | 8 | Enheten arbetas igenom | utvecklare | vanliga regler för bygge, tester och verifiering | nej | varje utvecklare skriver sin egen bekräftelserad, grinden kontrollerar texten |
 | 9 | Något utanför baslinjen hittas | vem som helst | ändringsbegäran registreras, arbetet fortsätter | bara vid utökning | att smyga in ändringen i acceptanskriterierna är huvudrisken |
 | 10 | Enhetens verifiering | agent och granskare | tester, bygge, oberoende verifieringsbevis | nej | verifieringen måste vara färsk mot det pushade läget |
