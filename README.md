@@ -39,7 +39,8 @@ The skill is invoked as `/projectcodeflow`, with the sub-commands
 | `references/flow-sv.md` | The same in Swedish, with the diagrams embedded |
 | `references/sources.md` | Every external source behind the method, with the clause-level mapping to ISO 21502, ISO 10007 and ISO 9001:2026 |
 | `diagrams/` | Three diagrams as Mermaid source and rendered PNG |
-| `presentation/board-sv.html` | A one-page board visual, self-contained and offline-safe |
+| `presentation/board-sv.html` | A one-page board visual in Swedish, self-contained and offline-safe |
+| `presentation/board-sv.png` | The same board visual rendered to an image for slides or print |
 | `scripts/pm-gate.sh` | The delivery gate |
 | `scripts/scaffold-unit.sh` | Creates a unit file and a change-request file from the templates |
 

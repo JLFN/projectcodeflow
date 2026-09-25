@@ -37,7 +37,7 @@
       max-height: 98vh;
       border-radius: 8px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-      padding: 24px 32px;
+      padding: 20px 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -47,14 +47,14 @@
     /* Header */
     .header {
       border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 12px;
+      padding-bottom: 10px;
     }
 
     .header-top {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .header-tag {
@@ -75,31 +75,32 @@
     }
 
     .title {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
       color: #0f172a;
       letter-spacing: -0.02em;
     }
 
     .summary {
-      font-size: 12.5px;
+      font-size: 12px;
       color: #475569;
       margin-top: 4px;
       max-width: 1200px;
+      line-height: 1.35;
     }
 
     /* Flow section */
     .flow-section {
-      margin: 12px 0;
+      margin: 8px 0;
     }
 
     .section-title {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: #334155;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -108,7 +109,7 @@
     .legend {
       display: inline-flex;
       gap: 14px;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 500;
       text-transform: none;
       letter-spacing: normal;
@@ -146,11 +147,11 @@
     .step-card {
       background: #ffffff;
       border-radius: 6px;
-      padding: 9px 10px;
+      padding: 8px 9px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 78px;
+      min-height: 74px;
       border: 1px solid #e2e8f0;
       position: relative;
     }
@@ -169,17 +170,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .step-num {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
       color: #64748b;
     }
 
     .step-badge {
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
@@ -200,7 +201,7 @@
     }
 
     .step-title {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       color: #0f172a;
       margin-bottom: 2px;
@@ -208,44 +209,80 @@
     }
 
     .step-desc {
-      font-size: 9.5px;
+      font-size: 9px;
       color: #64748b;
       line-height: 1.25;
+    }
+
+    /* Assurance bar */
+    .assurance-bar {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #1e3a8a;
+      border-radius: 5px;
+      padding: 7px 12px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .assurance-label {
+      font-size: 9.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #1e3a8a;
+      white-space: nowrap;
+      padding-right: 8px;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    .assurance-content {
+      display: flex;
+      gap: 14px;
+      font-size: 9.5px;
+      color: #334155;
+      line-height: 1.25;
+    }
+
+    .assurance-item strong {
+      color: #0f172a;
     }
 
     /* Panels section */
     .panels-section {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 14px;
-      margin-bottom: 8px;
+      gap: 12px;
+      margin-bottom: 6px;
     }
 
     .panel {
       background: #ffffff;
       border: 1px solid #e2e8f0;
       border-radius: 6px;
-      padding: 12px 14px;
+      padding: 10px 12px;
       display: flex;
       flex-direction: column;
     }
 
     .panel-header {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #1e3a8a;
       border-bottom: 1px solid #f1f5f9;
-      padding-bottom: 6px;
-      margin-bottom: 8px;
+      padding-bottom: 5px;
+      margin-bottom: 6px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .panel-header-sub {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 500;
       color: #64748b;
       text-transform: none;
@@ -255,7 +292,7 @@
     .decision-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 10px;
+      font-size: 9.5px;
     }
 
     .decision-table th {
@@ -268,7 +305,7 @@
     }
 
     .decision-table td {
-      padding: 5px 6px;
+      padding: 4px 6px;
       border-bottom: 1px solid #f1f5f9;
       color: #334155;
       vertical-align: top;
@@ -294,33 +331,33 @@
     .metric-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 8px;
+      gap: 6px;
+      margin-bottom: 6px;
     }
 
     .metric-box {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 4px;
-      padding: 6px 8px;
+      padding: 5px 7px;
     }
 
     .metric-label {
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 600;
       color: #64748b;
       text-transform: uppercase;
     }
 
     .metric-value {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
       color: #0f172a;
       margin-top: 1px;
     }
 
     .metric-sub {
-      font-size: 8.5px;
+      font-size: 8px;
       color: #64748b;
       margin-top: 1px;
     }
@@ -330,13 +367,13 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 3px;
     }
 
     .phase-item {
       display: flex;
-      font-size: 9.5px;
-      line-height: 1.25;
+      font-size: 9px;
+      line-height: 1.2;
       color: #334155;
       align-items: baseline;
       gap: 6px;
@@ -346,18 +383,18 @@
       font-weight: 700;
       color: #1e3a8a;
       background: #e0e7ff;
-      padding: 1px 5px;
+      padding: 1px 4px;
       border-radius: 3px;
-      font-size: 8.5px;
+      font-size: 8px;
       white-space: nowrap;
     }
 
     .safety-note {
-      margin-top: 6px;
+      margin-top: 5px;
       padding: 5px 8px;
       background: #f1f5f9;
       border-left: 3px solid #0284c7;
-      font-size: 9px;
+      font-size: 8.5px;
       color: #475569;
       line-height: 1.25;
       border-radius: 0 3px 3px 0;
@@ -368,7 +405,7 @@
       background: #eff6ff;
       border: 1.5px solid #bfdbfe;
       border-radius: 6px;
-      padding: 10px 16px;
+      padding: 8px 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -381,7 +418,7 @@
     }
 
     .footer-label {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -389,7 +426,7 @@
     }
 
     .footer-text {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
       color: #1e3a8a;
     }
@@ -397,9 +434,9 @@
     .footer-badge {
       background: #1e3a8a;
       color: #ffffff;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 4px;
       white-space: nowrap;
     }
@@ -440,7 +477,7 @@
         <div class="legend">
           <div class="legend-item">
             <span class="legend-dot human"></span>
-            <span>Mänskligt beslutspunkt (5 stycken)</span>
+            <span>Mänsklig beslutspunkt (5 stycken)</span>
           </div>
           <div class="legend-item">
             <span class="legend-dot auto"></span>
@@ -475,7 +512,7 @@
             <span class="step-badge auto">Automatiskt</span>
           </div>
           <div class="step-title">Förberedelse och ram</div>
-          <div class="step-desc">Systemet etablerar en isolerad arbetsyta och låser förutsättningarna för delmålet.</div>
+          <div class="step-desc">Endast ett delmål tillåts aktivt. Isolerad arbetsyta etableras och baslinjen förankras med dubbla avtryck.</div>
         </div>
 
         <div class="step-card human">
@@ -493,7 +530,7 @@
             <span class="step-badge auto">Automatiskt</span>
           </div>
           <div class="step-title">Genomförande</div>
-          <div class="step-desc">Utvecklingen sker självständigt och begränsas strikt till den godkända baslinjen.</div>
+          <div class="step-desc">Utvecklingen sker självständigt och begränsas strikt till den godkända och förankrade baslinjen.</div>
         </div>
 
         <!-- Row 2: Steps 6-10 -->
@@ -503,7 +540,7 @@
             <span class="step-badge human">Mänskligt beslut</span>
           </div>
           <div class="step-title">Avvikelsehantering</div>
-          <div class="step-desc">Nya upptäckter isoleras. Mänskligt godkännande krävs om baslinjen behöver utökas.</div>
+          <div class="step-desc">Nya upptäckter isoleras som separata ärenden. Mänskligt godkännande krävs om baslinjen ska vidgas.</div>
         </div>
 
         <div class="step-card auto">
@@ -521,7 +558,7 @@
             <span class="step-badge auto">Automatiskt</span>
           </div>
           <div class="step-title">Kvalitetsgrind</div>
-          <div class="step-desc">Teknisk kontroll spärrar leveransen om tester, dokumentation eller villkor brister.</div>
+          <div class="step-desc">Spärrar leverans om extern förankring bryts. Om kontrollen inte är aktiverad larmar systemet direkt.</div>
         </div>
 
         <div class="step-card human">
@@ -530,7 +567,7 @@
             <span class="step-badge human">Mänskligt beslut</span>
           </div>
           <div class="step-title">Slutavstämning</div>
-          <div class="step-desc">Samlad beslutslista. Beställaren tar ställning till eventuella parkerade frågor.</div>
+          <div class="step-desc">Samlad beslutslista. Beställaren tar ställning till eventuella parkerade frågor och sidoärenden.</div>
         </div>
 
         <div class="step-card auto">
@@ -539,10 +576,26 @@
             <span class="step-badge auto">Automatiskt</span>
           </div>
           <div class="step-title">Leverans och rotation</div>
-          <div class="step-desc">Godkänd kod fogas till utvecklingsgrenen och projektloggen uppdateras inför nästa cykel.</div>
+          <div class="step-desc">Godkänd kod fogas till utvecklingsgrenen och projektloggen uppdateras inför nästa delmål.</div>
         </div>
       </div>
     </section>
+
+    <!-- Assurance bar: highlighting the three hardening points -->
+    <div class="assurance-bar">
+      <div class="assurance-label">Inbyggda skyddsgarantier</div>
+      <div class="assurance-content">
+        <div class="assurance-item">
+          <strong>Extern förankring:</strong> Baslinjen låses med digitalt kontrollavtryck både i delmålet och i den externa versionshistoriken; att ändra i texten i efterhand kan aldrig godkännas.
+        </div>
+        <div class="assurance-item">
+          <strong>Strikt sekvens:</strong> Endast ett aktivt delmål tillåts åt gången; försök till parallella spår avvisas automatiskt.
+        </div>
+        <div class="assurance-item">
+          <strong>Spårbar kontroll:</strong> Om kvalitetsgrinden inte är aktiverad i projektet larmar systemet uttryckligen; utebliven kontroll kan aldrig misstas för ett godkännande.
+        </div>
+      </div>
+    </div>
 
     <!-- Detail panels -->
     <div class="panels-section">
@@ -584,7 +637,7 @@
             <tr>
               <td class="decision-name">5. Projektbehörighet</td>
               <td>Engångsbeslut om mappbehörighet och val av oberoende granskningsmodell.</td>
-              <td class="default-action">Utökade automatiska kvalitetskontroller förblir inaktiva.</td>
+              <td class="default-action">Utökade automatiska kvalitetskontroller förblir inaktiva och larmas tydligt.</td>
             </tr>
           </tbody>
         </table>

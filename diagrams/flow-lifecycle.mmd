@@ -14,21 +14,22 @@ flowchart TD
   MP --> I
   G -->|"no, not blocking"| N1["Record it and batch it to unit close"]
   N1 --> I
-  G -->|"yes"| I["Pick the active unit from the register"]
+  G -->|"yes"| I["Pick the active unit, exactly one in flight"]
   I --> J["Write the unit contract, branch from the main line, freeze the baseline"]
-  J --> K["Work the unit"]
+  J --> J3["Anchor the frozen hash in the commit trailer, not only in the record"]
+  J3 --> K["Work the unit"]
   K --> L{"Anything outside the frozen baseline?"}
   L -->|"yes"| L2["Register the change request and keep working"]
   L2 --> L3{"Disposition"}
   L3 -->|"AMEND"| H2["HUMAN DECISION 3: approve a wider baseline"]
-  H2 --> J2["New frozen hash, continue with the wider contract"]
+  H2 --> J2["New frozen hash, anchored again, continue with the wider contract"]
   J2 --> K
   L3 -->|"NEXT-UNIT"| NU["Its own unit and its own branch, after this unit merges"]
   L3 -->|"DEFER or REJECT"| REG["Recorded, no human involved"]
   NU --> K
   REG --> K
   L -->|"no"| O["Unit done: tests, build, verification record"]
-  O --> P["Run the gate"]
+  O --> P["Run the gate: records, branch, hash, anchor, alignment, change register"]
   P -->|"red"| R1["Fix the cause, record the nonconformity, run the gate again"]
   R1 --> P
   P -->|"green"| Q["Commit with the unit trailer, review, merge"]

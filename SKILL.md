@@ -172,5 +172,5 @@ unmounted, and the whole method can be withdrawn without touching product code.
 | `references/flow-sv.md` | The same in Swedish, with the charts embedded |
 | `references/sources.md` | Every external source behind the method: the ISO catalogue pages and official previews it was written against, and the clause-level mapping. Read this before repeating any standards claim |
 | `diagrams/*.mmd`, `diagrams/*.png` | The three flow diagrams, source and render |
-| `presentation/board-sv.html` | A one-page board visual, self-contained and offline-safe |
+| `presentation/board-sv.html`, `presentation/board-sv.png` | A one-page board visual in Swedish, self-contained and offline-safe, plus its rendered image |
 | `scripts/pm-gate.sh`, `scripts/scaffold-unit.sh` | The gate and the scaffolding helper |
